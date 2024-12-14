@@ -4,7 +4,7 @@ Add some git information on `File` fields from latest commit: date, author and e
 
 ## Install
 
-`npm install --save gatsby-transformer-gitinfo`
+`npm install --save @skylerwlewis/gatsby-transformer-gitinfo`
 
 **Note:** You also need to have `gatsby-source-filesystem` installed and configured so it
 points to your files.
@@ -22,16 +22,16 @@ module.exports = {
         path: `./src/data/`,
       },
     },
-    `gatsby-transformer-gitinfo`,
+    `@skylerwlewis/gatsby-transformer-gitinfo`,
   ],
 }
 ```
 
-Where the _source folder_ `./src/data/` is a git versionned directory.
+Where the _source folder_ `./src/data/` is a git versioned directory.
 
 The plugin will add several fields to `File` nodes: `gitLogLatestAuthorName`, `gitLogLatestAuthorEmail` and `gitLogLatestDate`. These fields are related to the latest commit touching that file.
 
-If the file is not versionned, these fields will be `null`.
+If the file is not versioned, these fields will be `null`.
 
 They are exposed in your graphql schema which you can query:
 
@@ -97,7 +97,7 @@ If it *does not* match, the file will be skipped.
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-transformer-gitinfo`,
+      resolve: `@skylerwlewis/gatsby-transformer-gitinfo`,
       options: {
         include: /\.md$/i, // Only .md files
       },
@@ -116,7 +116,7 @@ If it *does* match, the file will be skipped.
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-transformer-gitinfo`,
+      resolve: `@skylerwlewis/gatsby-transformer-gitinfo`,
       options: {
         ignore: /\.jpeg$/i, // All files except .jpeg
       },
@@ -137,7 +137,7 @@ The root of the git repository. Will use current directory if not provided.
 module.exports = {
   plugins: [
     {
-      resolve: `gatsby-transformer-gitinfo`,
+      resolve: `@skylerwlewis/gatsby-transformer-gitinfo`,
       options: {
         include: /\.md$/i,
         ignore: /README/i,  // Will match all .md files, except README.md

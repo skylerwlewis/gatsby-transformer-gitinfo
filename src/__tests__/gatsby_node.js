@@ -81,7 +81,7 @@ describe(`Processing File nodes matching filter regex`, () => {
       "--date": '"Mon 20 Aug 2018 20:19:19 UTC"'
     });
 
-    fs.writeFileSync(`${dummyRepoPath}/unversionned`, "World");
+    fs.writeFileSync(`${dummyRepoPath}/unversioned`, "World");
   });
 
   it("should add log and remote git info to commited File node", async () => {
@@ -109,11 +109,11 @@ describe(`Processing File nodes matching filter regex`, () => {
     });
   });
 
-  it("should not add log or remote git info to unversionned File node", async () => {
-    node.absolutePath = `${dummyRepoPath}/unversionned`;
+  it("should not add log or remote git info to unversioned File node", async () => {
+    node.absolutePath = `${dummyRepoPath}/unversioned`;
     node.dir = dummyRepoPath;
     await onCreateNode(createNodeSpec, {
-      include: /unversionned/,
+      include: /unversioned/,
       dir: dummyRepoPath
     });
     expect(createNodeField).not.toHaveBeenCalled();
