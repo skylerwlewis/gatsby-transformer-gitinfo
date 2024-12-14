@@ -1,7 +1,7 @@
 const fs = require(`fs`);
 const os = require(`os`);
 const path = require(`path`);
-const git = require("simple-git/promise");
+const git = require("simple-git");
 const { onCreateNode } = require(`../gatsby-node`);
 
 const tmpDir = `./tmp-test/`;

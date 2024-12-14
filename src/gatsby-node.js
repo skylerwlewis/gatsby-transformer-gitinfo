@@ -1,4 +1,4 @@
-const git = require(`simple-git/promise`);
+const git = require(`simple-git`);
 
 async function getLogWithRetry(gitRepo, node, retry = 2) {
   // Need retry, see https://github.com/steveukx/git-js/issues/302
